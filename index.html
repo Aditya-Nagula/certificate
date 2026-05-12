@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>TSSC Authorized Partner | Certifications & Training</title>
-  <!-- Google Fonts & simple CSS reset -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -18,113 +17,192 @@
       background-color: #f8fafc;
       color: #0f172a;
       line-height: 1.5;
+      scroll-behavior: smooth;
     }
 
     .container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 20px;
     }
 
-    /* header / nav */
+    /* ========== HEADER & NAVIGATION (MOBILE FIRST) ========== */
     .header {
       background: white;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
-      z-index: 10;
-      background-color: rgba(255,255,255,0.96);
-      backdrop-filter: blur(4px);
+      z-index: 100;
     }
+
     .nav {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 0;
-      gap: 16px;
+      padding: 16px 20px;
+      position: relative;
     }
+
     .logo h1 {
-      font-size: 1.5rem;
-      font-weight: 700;
+      font-size: 1.3rem;
+      font-weight: 800;
       background: linear-gradient(135deg, #1e3c72, #2b4c8a);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       letter-spacing: -0.3px;
     }
+
     .logo p {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: #2c5f9a;
-      font-weight: 500;
+      font-weight: 600;
+      margin-top: 2px;
     }
+
+    /* Hamburger button */
+    .menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #1e3a8a;
+      padding: 4px 8px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .menu-toggle:hover {
+      background: #f0f4fa;
+    }
+
+    /* Navigation links - hidden on mobile by default */
     .nav-links {
-      display: flex;
-      gap: 28px;
-      flex-wrap: wrap;
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      flex-direction: column;
+      gap: 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border-top: 1px solid #e2e8f0;
+      padding: 12px 0;
+      z-index: 99;
     }
+
+    .nav-links.show {
+      display: flex;
+    }
+
     .nav-links a {
+      padding: 14px 24px;
       text-decoration: none;
       font-weight: 500;
       color: #1e293b;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover {
-      color: #2563eb;
-    }
-    .btn-outline {
-      border: 1px solid #2563eb;
-      padding: 6px 16px;
-      border-radius: 40px;
-      background: transparent;
-      font-weight: 600;
-      color: #2563eb;
-      transition: 0.2s;
-    }
-    .btn-outline:hover {
-      background: #2563eb;
-      color: white;
+      border-bottom: 1px solid #f1f5f9;
+      transition: background 0.2s, color 0.2s;
     }
 
-    /* hero */
+    .nav-links a:hover {
+      background: #f8fafc;
+      color: #2563eb;
+    }
+
+    .nav-links .btn-outline {
+      margin: 8px 20px;
+      text-align: center;
+      border: 1px solid #2563eb;
+      background: white;
+      border-radius: 40px;
+      padding: 10px;
+      color: #2563eb;
+      font-weight: 600;
+    }
+
+    /* Desktop styles */
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+      
+      .nav {
+        padding: 16px 24px;
+      }
+      
+      .nav-links {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        gap: 32px;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        border-top: none;
+      }
+      
+      .nav-links a {
+        padding: 8px 0;
+        border-bottom: none;
+      }
+      
+      .nav-links a:hover {
+        background: transparent;
+        color: #2563eb;
+      }
+      
+      .nav-links .btn-outline {
+        margin: 0;
+        padding: 6px 20px;
+      }
+    }
+
+    /* ========== HERO SECTION ========== */
     .hero {
       text-align: center;
-      padding: 60px 0 48px;
+      padding: 50px 0 40px;
     }
+
     .hero-badge {
       background: #e6f0ff;
       display: inline-block;
       padding: 6px 14px;
       border-radius: 40px;
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.8rem;
+      font-weight: 700;
       color: #1e4d8f;
       margin-bottom: 24px;
     }
+
     .hero h1 {
-      font-size: 2.8rem;
+      font-size: 1.9rem;
       font-weight: 800;
       letter-spacing: -0.02em;
-      line-height: 1.2;
+      line-height: 1.3;
       max-width: 900px;
-      margin: 0 auto 20px;
+      margin: 0 auto 16px;
       background: linear-gradient(to right, #0c4a6e, #1e3a8a);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
+
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #334155;
       max-width: 700px;
-      margin: 0 auto 32px;
+      margin: 0 auto 28px;
     }
+
     .hero-buttons {
       display: flex;
       gap: 16px;
       justify-content: center;
       flex-wrap: wrap;
     }
+
     .btn-primary {
       background: #1e3a8a;
       color: white;
@@ -132,14 +210,16 @@
       border-radius: 40px;
       font-weight: 600;
       text-decoration: none;
-      transition: 0.2s;
+      transition: all 0.2s;
       display: inline-block;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
+
     .btn-primary:hover {
       background: #2563eb;
       transform: translateY(-2px);
     }
+
     .btn-secondary {
       background: white;
       border: 1px solid #cbd5e1;
@@ -148,55 +228,79 @@
       font-weight: 600;
       color: #1e293b;
       text-decoration: none;
-      transition: 0.2s;
+      transition: all 0.2s;
+      display: inline-block;
     }
+
     .btn-secondary:hover {
       border-color: #2563eb;
       background: #f1f5f9;
     }
 
-    /* certificates section (trust) */
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      .hero {
+        padding: 70px 0 60px;
+      }
+    }
+
+    /* ========== CERTIFICATES GRID ========== */
     .certs-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 24px;
+      gap: 20px;
       margin: 48px 0;
     }
+
     .cert-card {
       background: white;
       border-radius: 24px;
-      padding: 20px 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+      padding: 20px 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
       border: 1px solid #e2e8f0;
       flex: 1;
-      min-width: 200px;
+      min-width: 170px;
       text-align: center;
+      transition: all 0.2s;
     }
-    .cert-card img {
-      width: 48px;
-      height: 48px;
-      margin-bottom: 16px;
+
+    .cert-card:hover {
+      border-color: #bdd3ff;
+      transform: translateY(-3px);
     }
+
+    .cert-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+
     .cert-card h4 {
       font-weight: 700;
       margin-bottom: 8px;
+      font-size: 1.1rem;
     }
+
     .cert-card p {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: #475569;
     }
 
+    /* ========== SECTIONS ========== */
     section {
       margin: 64px 0;
     }
+
     .section-title {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 700;
       margin-bottom: 32px;
       position: relative;
       display: inline-block;
     }
+
     .section-title:after {
       content: '';
       position: absolute;
@@ -208,63 +312,124 @@
       border-radius: 4px;
     }
 
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+
+    /* Services & Pricing Grids */
     .services-grid, .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 28px;
       margin-top: 20px;
     }
+
     .service-item {
       background: white;
       border-radius: 28px;
       padding: 1.8rem;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
       border: 1px solid #eef2ff;
       transition: all 0.2s;
     }
+
     .service-item:hover {
       border-color: #bdd3ff;
-      box-shadow: 0 20px 25px -12px rgba(0,0,0,0.05);
+      box-shadow: 0 12px 20px -12px rgba(0,0,0,0.08);
     }
-    .fee {
-      font-weight: 800;
-      color: #0f3b7a;
-      font-size: 1.4rem;
-      margin: 12px 0 8px;
-    }
+
     .badge {
       background: #dbeafe;
       color: #1e40af;
       font-size: 0.7rem;
       border-radius: 50px;
-      padding: 4px 10px;
+      padding: 4px 12px;
       display: inline-block;
-      font-weight: 600;
+      font-weight: 700;
+      margin-bottom: 12px;
     }
 
+    .service-item h3 {
+      font-size: 1.3rem;
+      margin: 8px 0;
+    }
+
+    .fee {
+      font-weight: 800;
+      color: #0f3b7a;
+      font-size: 1.4rem;
+      margin: 16px 0 8px;
+    }
+
+    /* Process Grid */
     .process-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 24px;
       margin: 32px 0;
     }
+
     .process-step {
       background: #f1f5f9;
       border-radius: 24px;
       padding: 24px;
       border-left: 4px solid #2563eb;
+      transition: 0.2s;
     }
 
+    .process-step strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    /* Pricing Table */
+    .pricing-table {
+      background: #f0f4fe;
+      border-radius: 28px;
+      padding: 24px;
+      margin-bottom: 32px;
+      overflow-x: auto;
+    }
+
+    .pricing-table table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 400px;
+    }
+
+    .pricing-table th, .pricing-table td {
+      text-align: left;
+      padding: 14px 8px;
+      border-bottom: 1px solid #cbd5e1;
+    }
+
+    .pricing-table th {
+      font-weight: 700;
+      color: #0c4a6e;
+    }
+
+    /* Contact Form */
     .form-section {
       background: white;
       border-radius: 32px;
-      padding: 40px 32px;
+      padding: 40px 28px;
       box-shadow: 0 20px 35px -10px rgba(0,0,0,0.05);
       border: 1px solid #e2edff;
+      margin: 64px 0;
     }
+
+    .form-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
     .form-group {
       margin-bottom: 20px;
     }
+
     input, select, textarea {
       width: 100%;
       padding: 14px 18px;
@@ -274,54 +439,65 @@
       font-size: 1rem;
       transition: 0.2s;
     }
+
     input:focus, select:focus, textarea:focus {
       outline: none;
       border-color: #2563eb;
       box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
     }
+
     button[type="submit"] {
       background: #1e3a8a;
       color: white;
       border: none;
-      padding: 14px 28px;
+      padding: 14px 32px;
       font-weight: 700;
       border-radius: 40px;
       font-size: 1rem;
       cursor: pointer;
       transition: 0.2s;
     }
+
     button[type="submit"]:hover {
       background: #2563eb;
+      transform: translateY(-2px);
     }
 
+    /* Footer */
     footer {
       background: #0f172a;
       color: #94a3b8;
-      padding: 40px 0;
-      margin-top: 60px;
+      padding: 40px 20px;
+      margin-top: 40px;
       text-align: center;
       border-top: 1px solid #1e293b;
     }
-    .footer-content a {
+
+    footer a {
       color: #b9d0f0;
       text-decoration: none;
     }
 
-    @media (max-width: 700px) {
-      .hero h1 { font-size: 2rem; }
-      .container { padding: 0 20px; }
-      .nav { flex-direction: column; }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    hr {
+      margin: 20px 0;
+      border-color: #e2e8f0;
     }
   </style>
 </head>
 <body>
+
 <div class="header">
   <div class="container nav">
     <div class="logo">
       <h1>SkillNexus<span style="color:#1e3a8a;">®</span></h1>
       <p>TSSC Authorized Training Partner</p>
     </div>
-    <div class="nav-links">
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    <div class="nav-links" id="navLinks">
       <a href="#services">Services</a>
       <a href="#pricing">Fees</a>
       <a href="#process">Process</a>
@@ -331,6 +507,7 @@
 </div>
 
 <main class="container">
+  <!-- Hero Section -->
   <div class="hero">
     <div class="hero-badge">Govt. Authorized | Telecom Sector Skill Council (TSSC)</div>
     <h1>Get TSSC Affiliated & Certified<br>Power Your Career with NSQF Credentials</h1>
@@ -341,69 +518,105 @@
     </div>
   </div>
 
-  <!-- Trust certificates showcase -->
+  <!-- Trust Certificates Showcase -->
   <div class="certs-grid">
     <div class="cert-card">
-      <div style="font-size: 36px;">🎓</div>
+      <div class="icon">🎓</div>
       <h4>Academia Membership</h4>
       <p>Valid 2025-2027 • Moon Enterprise</p>
     </div>
     <div class="cert-card">
-      <div style="font-size: 36px;">🏅</div>
+      <div class="icon">🏅</div>
       <h4>ToT Certificate</h4>
-      <p>Trainer ID TR595000 • Grade 'B' <br>IoT Devices / Systems</p>
+      <p>Trainer ID TR595000 • Grade 'B'<br>IoT Devices / Systems</p>
     </div>
     <div class="cert-card">
-      <div style="font-size: 36px;">📜</div>
+      <div class="icon">📜</div>
       <h4>TC Accreditation</h4>
       <p>Handheld Devices Technician (TEL/Q2201)</p>
     </div>
     <div class="cert-card">
-      <div style="font-size: 36px;">📱</div>
+      <div class="icon">📱</div>
       <h4>Mobile Repairing (RPL)</h4>
       <p>Recognition of Prior Learning Mode</p>
     </div>
   </div>
 
-  <!-- Services section -->
+  <!-- Services Section -->
   <section id="services">
     <h2 class="section-title">What We Offer</h2>
     <div class="services-grid">
-      <div class="service-item"><span class="badge">Membership</span><h3>Academia/Industry Partner</h3><p>Become an official member of TSSC – unlock recognition, curriculum updates & placement support.</p><div class="fee">₹70k - ₹1L +GST</div></div>
-      <div class="service-item"><span class="badge">Accreditation</span><h3>Training Center (TC)</h3><p>Per center & per job role accreditation. Get approval to deliver NSQF-aligned programs.</p><div class="fee">₹6,000 per center/role</div></div>
-      <div class="service-item"><span class="badge">Certification</span><h3>Candidate Certification</h3><p>Assessment & certificate for trainees. NSQF level 4 credentials.</p><div class="fee">₹1,500 - ₹2,000</div></div>
-      <div class="service-item"><span class="badge">Train the Trainer</span><h3>ToT Program</h3><p>10-day online/offline training + assessment. Become a certified trainer.</p><div class="fee">₹15,000</div></div>
-      <div class="service-item"><span class="badge">Master Trainer</span><h3>Master Trainers</h3><p>Advanced facilitator training for high impact instruction.</p><div class="fee">₹25,000</div></div>
-      <div class="service-item"><span class="badge">RPL</span><h3>Mobile Repairing Domain</h3><p>Day-long training + assessment – Recognition of Prior Learning for working professionals.</p><div class="fee">Call for pricing</div></div>
+      <div class="service-item">
+        <span class="badge">Membership</span>
+        <h3>Academia/Industry Partner</h3>
+        <p>Become an official member of TSSC – unlock recognition, curriculum updates & placement support.</p>
+        <div class="fee">₹70k - ₹1L +GST</div>
+      </div>
+      <div class="service-item">
+        <span class="badge">Accreditation</span>
+        <h3>Training Center (TC)</h3>
+        <p>Per center & per job role accreditation. Get approval to deliver NSQF-aligned programs.</p>
+        <div class="fee">₹6,000 per center/role</div>
+      </div>
+      <div class="service-item">
+        <span class="badge">Certification</span>
+        <h3>Candidate Certification</h3>
+        <p>Assessment & certificate for trainees. NSQF level 4 credentials.</p>
+        <div class="fee">₹1,500 - ₹2,000</div>
+      </div>
+      <div class="service-item">
+        <span class="badge">Train the Trainer</span>
+        <h3>ToT Program</h3>
+        <p>10-day online/offline training + assessment. Become a certified trainer.</p>
+        <div class="fee">₹15,000</div>
+      </div>
+      <div class="service-item">
+        <span class="badge">Master Trainer</span>
+        <h3>Master Trainers</h3>
+        <p>Advanced facilitator training for high impact instruction.</p>
+        <div class="fee">₹25,000</div>
+      </div>
+      <div class="service-item">
+        <span class="badge">RPL</span>
+        <h3>Mobile Repairing Domain</h3>
+        <p>Day-long training + assessment – Recognition of Prior Learning for working professionals.</p>
+        <div class="fee">Call for pricing</div>
+      </div>
     </div>
   </section>
 
-  <!-- Pricing & process combined -->
+  <!-- Pricing Section -->
   <section id="pricing">
     <h2 class="section-title">Affiliation & Certification Fees</h2>
-    <div style="background:#f0f4fe; border-radius: 28px; padding: 24px; margin-bottom: 32px;">
-      <table style="width:100%; border-collapse: collapse;">
-        <tr style="border-bottom:1px solid #cbd5e1;"><th style="text-align:left; padding:12px 0">Service</th><th style="text-align:left;">Fee (INR + GST)</th></tr>
-        <tr><td style="padding:8px 0">Membership Partner Fee</td><td>₹70,000 - ₹1,00,000</td></tr>
-        <tr><td style="padding:8px 0">Training Center Accreditation (per center per job role)</td><td>₹6,000</td></tr>
-        <tr><td style="padding:8px 0">Candidate Certification (Assessment Fee)</td><td>₹1,500 / ₹2,000</td></tr>
-        <tr><td style="padding:8px 0">Training of Trainers (ToT)</td><td>₹15,000</td></tr>
-        <tr><td style="padding:8px 0">Master Trainers Program</td><td>₹25,000</td></tr>
+    <div class="pricing-table">
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Fee (INR + GST)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Membership Partner Fee</td><td>₹70,000 - ₹1,00,000</td></tr>
+          <tr><td>Training Center Accreditation (per center per job role)</td><td>₹6,000</td></tr>
+          <tr><td>Candidate Certification (Assessment Fee)</td><td>₹1,500 / ₹2,000</td></tr>
+          <tr><td>Training of Trainers (ToT)</td><td>₹15,000</td></tr>
+          <tr><td>Master Trainers Program</td><td>₹25,000</td></tr>
+        </tbody>
       </table>
       <p style="font-size: 0.8rem; margin-top: 16px;">*GST extra as applicable. Prices are subject to TSSC guidelines.</p>
     </div>
   </section>
 
+  <!-- Process Section -->
   <section id="process">
     <h2 class="section-title">Step-by-Step Process</h2>
     <div class="process-grid">
-      <div class="process-step"><strong>🔍 1. Due Diligence</strong><br>Document submission & verification</div>
-      <div class="process-step"><strong>💸 2. Fee Payment</strong><br>Affiliation / membership fee</div>
-      <div class="process-step"><strong>🤝 3. Sign MoU</strong><br>Formal agreement with TSSC</div>
-      <div class="process-step"><strong>🏢 4. Center Verification</strong><br>Infrastructure assessment by TSSC</div>
-      <div class="process-step"><strong>📋 5. Assessment & Certification</strong><br>Final approval & certificate issuance</div>
+      <div class="process-step"><strong>🔍 1. Due Diligence</strong>Document submission & verification</div>
+      <div class="process-step"><strong>💸 2. Fee Payment</strong>Affiliation / membership fee</div>
+      <div class="process-step"><strong>🤝 3. Sign MoU</strong>Formal agreement with TSSC</div>
+      <div class="process-step"><strong>🏢 4. Center Verification</strong>Infrastructure assessment by TSSC</div>
+      <div class="process-step"><strong>📋 5. Assessment & Certification</strong>Final approval & certificate issuance</div>
     </div>
-    <h3 style="margin: 32px 0 16px;">📌 For ToT (Training of Trainers)</h3>
+    
+    <h3 style="margin: 40px 0 20px;">📌 For Training of Trainers (ToT)</h3>
     <div class="process-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px,1fr));">
       <div class="process-step">Receipt of nominations</div>
       <div class="process-step">Interaction with TSSC team</div>
@@ -413,14 +626,23 @@
     </div>
   </section>
 
-  <!-- Lead form / Contact -->
+  <!-- Contact Form Section -->
   <section id="contact" class="form-section">
-    <h2 style="font-size: 1.8rem; margin-bottom: 8px;">Partner With TSSC</h2>
+    <h2>Partner With TSSC</h2>
     <p style="margin-bottom: 28px;">Fill the form – our affiliation expert will reach out within 24 hrs.</p>
+    
+    <!-- IMPORTANT: Replace YOUR_FORM_ID with your actual Formspree form ID -->
+    <!-- Get a free form ID at https://formspree.io/ (no credit card, 50 submissions/month free) -->
     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <div class="form-group"><input type="text" name="name" placeholder="Full name *" required></div>
-      <div class="form-group"><input type="email" name="email" placeholder="Email address *" required></div>
-      <div class="form-group"><input type="tel" name="phone" placeholder="Mobile number *" required></div>
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Full name *" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email address *" required>
+      </div>
+      <div class="form-group">
+        <input type="tel" name="phone" placeholder="Mobile number *" required>
+      </div>
       <div class="form-group">
         <select name="interest" required>
           <option value="">Select Service</option>
@@ -432,7 +654,9 @@
           <option>Master Trainer Program</option>
         </select>
       </div>
-      <div class="form-group"><textarea rows="3" name="message" placeholder="Any specific details / center location..."></textarea></div>
+      <div class="form-group">
+        <textarea rows="3" name="message" placeholder="Any specific details / center location..."></textarea>
+      </div>
       <button type="submit">Submit Enquiry →</button>
       <p style="font-size: 0.75rem; margin-top: 20px;">By submitting, you agree to be contacted by our TSSC partnership desk.</p>
     </form>
@@ -440,12 +664,38 @@
 </main>
 
 <footer>
-  <div class="container footer-content">
+  <div class="container">
     <p>© 2026 — Authorized Channel Partner for <strong>Telecom Sector Skill Council (TSSC)</strong> — Govt. of India Initiative</p>
     <p style="margin-top: 12px;">📍 TSSC registered office: 3rd Floor, Plot No.126, Sector 44, Gurgaon-122003 | 📞 +91-124-4148029</p>
     <p style="margin-top: 8px;">🔗 <a href="https://www.tsscindia.com" target="_blank">www.tsscindia.com</a> | Partner code: TSSC-MEM-482</p>
   </div>
 </footer>
-<!-- Note: Replace form action with your actual form endpoint (Formspree / backend) -->
+
+<!-- Hamburger Menu JavaScript -->
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('show');
+    });
+    
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+      });
+    });
+  }
+</script>
+
+<!-- Formspree redirect handling (optional, shows success message) -->
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('message') === 'success') {
+    alert('Thank you! Your enquiry has been sent. We will contact you shortly.');
+  }
+</script>
 </body>
 </html>
