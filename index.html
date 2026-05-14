@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Samriddh Skill India | TSSC Authorized Partner | Govt. Certificates</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -122,93 +123,158 @@
       }
     }
 
-    /* Hero */
+    /* Hero Section with Background */
     .hero {
-      text-align: center;
-      padding: 50px 0 40px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      padding: 80px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600') center/cover;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+    
+    .hero .container {
+      position: relative;
+      z-index: 1;
     }
 
     .hero-badge {
-      background: #e6f0ff;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
       display: inline-block;
       padding: 6px 14px;
       border-radius: 40px;
       font-size: 0.8rem;
       font-weight: 700;
-      color: #1e4d8f;
+      color: #fbbf24;
       margin-bottom: 24px;
     }
 
     .hero h1 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 800;
       line-height: 1.3;
-      background: linear-gradient(to right, #0c4a6e, #1e3a8a);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      color: white;
+    }
+    
+    .hero p {
+      color: #cbd5e1;
+      margin-top: 20px;
+      font-size: 1.1rem;
     }
 
     @media (min-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
+      .hero h1 { font-size: 3rem; }
     }
 
     .btn-primary {
-      background: #1e3a8a;
-      color: white;
-      padding: 12px 28px;
+      background: #f59e0b;
+      color: #0f172a;
+      padding: 14px 32px;
       border-radius: 40px;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
       display: inline-block;
       margin: 5px;
+      transition: all 0.3s;
+    }
+    
+    .btn-primary:hover {
+      background: #fbbf24;
+      transform: translateY(-2px);
     }
 
     .btn-secondary {
-      background: white;
-      border: 1px solid #cbd5e1;
-      padding: 12px 28px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid #f59e0b;
+      padding: 14px 32px;
       border-radius: 40px;
       font-weight: 600;
-      color: #1e293b;
+      color: white;
       text-decoration: none;
       display: inline-block;
       margin: 5px;
+      transition: all 0.3s;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.25);
     }
 
-    .govt-badges {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin: 30px 0;
+    /* Trust Bar - Logos Section */
+    .trust-bar {
+      background: white;
+      padding: 30px 0;
+      border-bottom: 1px solid #e2e8f0;
     }
-    .govt-badge {
-      background: linear-gradient(135deg, #fff8e7, #fff);
-      border: 1px solid #f59e0b;
-      border-radius: 50px;
-      padding: 6px 16px;
-      font-weight: 600;
-      color: #b45309;
-      font-size: 0.85rem;
+    
+    .logo-slider {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    
+    .trust-logo {
+      text-align: center;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    
+    .trust-logo:hover {
+      opacity: 1;
+    }
+    
+    .trust-logo img {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+    }
+    
+    .trust-logo span {
+      display: block;
+      font-size: 0.7rem;
+      color: #64748b;
+      margin-top: 5px;
     }
 
-    .logo-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      margin: 40px 0;
+    /* Stats Counter */
+    .stats-section {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      padding: 50px 0;
     }
-    .logo-item {
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
       text-align: center;
     }
-    .logo-icon {
+    
+    .stat-item h3 {
       font-size: 2.5rem;
-      display: block;
+      font-weight: 800;
+      color: #1e3a8a;
+    }
+    
+    .stat-item p {
+      color: #475569;
+      font-weight: 600;
     }
 
-    /* ✅ SIRF YAHAN FIX KIYA - IMAGES AB FIT HOONGE */
+    /* Certificate Boxes */
     .certificates-section {
       margin: 60px 0;
     }
@@ -226,7 +292,7 @@
       left: 0;
       width: 60%;
       height: 3px;
-      background: #2563eb;
+      background: #f59e0b;
       border-radius: 4px;
     }
     .certificates-grid {
@@ -245,9 +311,9 @@
     }
     .cert-box:hover {
       transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
     }
     
-    /* ✅ YAHI FIX HAI - IMAGES AB PERFECTLY FIT */
     .cert-image-area {
       width: 100%;
       height: 260px;
@@ -269,7 +335,6 @@
       padding: 12px;
     }
     
-    /* Box Content */
     .box-content {
       padding: 20px;
     }
@@ -313,7 +378,46 @@
       transition: background 0.2s;
     }
     .btn-get:hover {
-      background: #2563eb;
+      background: #f59e0b;
+      color: #0f172a;
+    }
+
+    /* Testimonials */
+    .testimonials-section {
+      background: #f1f5f9;
+      padding: 60px 0;
+      margin: 60px 0;
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .testimonial-card {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    
+    .testimonial-card i {
+      color: #f59e0b;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    
+    .testimonial-card p {
+      font-style: italic;
+      color: #334155;
+    }
+    
+    .testimonial-author {
+      margin-top: 15px;
+      font-weight: 700;
+      color: #1e3a8a;
     }
 
     .services-grid, .process-grid {
@@ -327,6 +431,16 @@
       border-radius: 20px;
       padding: 24px;
       border: 1px solid #e2e8f0;
+      transition: all 0.3s;
+    }
+    .service-item:hover, .process-step:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+    .service-item i, .process-step i {
+      font-size: 2rem;
+      color: #f59e0b;
+      margin-bottom: 15px;
     }
     .fee {
       font-weight: 800;
@@ -355,6 +469,7 @@
       padding: 32px 24px;
       border: 1px solid #e2edff;
       margin: 48px 0;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     }
     input, select, textarea {
       width: 100%;
@@ -372,12 +487,32 @@
       border-radius: 40px;
       font-weight: 700;
       cursor: pointer;
+      transition: all 0.3s;
+    }
+    button[type="submit"]:hover {
+      background: #f59e0b;
+      color: #0f172a;
     }
     footer {
       background: #0f172a;
       color: #94a3b8;
       padding: 40px 20px;
       text-align: center;
+    }
+    .footer-logos {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .footer-logos img {
+      height: 40px;
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+    .footer-logos img:hover {
+      opacity: 1;
     }
     .company-address {
       background: #e6f0ff;
@@ -396,6 +531,9 @@
       }
       .cert-image-area {
         height: 200px;
+      }
+      .hero h1 {
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -419,40 +557,82 @@
   </div>
 </div>
 
-<main class="container">
-  <div class="hero">
+<!-- Hero Section with Background -->
+<section class="hero">
+  <div class="container">
     <div class="hero-badge">✓ Government Approved | Skill India | NSQF Aligned</div>
-    <h1>We Are Authorized Channel Partner for <br>Telecom Sector Skill Council (TSSC) — Govt. of India Initiative</h1>
-    <div class="govt-badges">
-      <span class="govt-badge">🇮🇳 Skill India</span>
-      <span class="govt-badge">📜 NSQF Certified</span>
-      <span class="govt-badge">🏛️ TSSC Authorized</span>
-      <span class="govt-badge">✅ Govt. Approved Certificate</span>
-    </div>
+    <h1>India's Most Trusted Platform for<br>TSSC Government Certifications</h1>
+    <p>Authorized Channel Partner for Telecom Sector Skill Council (TSSC) — Govt. of India Initiative</p>
     <div style="margin-top: 30px;">
       <a href="#certificates" class="btn-primary">View Certificates ↓</a>
       <a href="#contact" class="btn-secondary">Get Govt. Certificate →</a>
     </div>
   </div>
+</section>
 
-  <div class="logo-row">
-    <div class="logo-item"><span class="logo-icon">🇮🇳</span><br><strong>Skill India</strong><br><span style="font-size: 0.7rem;">Government of India</span></div>
-    <div class="logo-item"><span class="logo-icon">📡</span><br><strong>TSSC</strong><br><span style="font-size: 0.7rem;">Telecom Sector Skill Council</span></div>
-    <div class="logo-item"><span class="logo-icon">📜</span><br><strong>NSQF</strong><br><span style="font-size: 0.7rem;">Level 4 Certified</span></div>
-    <div class="logo-item"><span class="logo-icon">🔧</span><br><strong>Make in India</strong><br><span style="font-size: 0.7rem;">Skill Development</span></div>
+<!-- Trust Bar - Official Logos -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="logo-slider">
+      <div class="trust-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5e/Skill_India_logo.png/220px-Skill_India_logo.png" alt="Skill India" onerror="this.src='https://placehold.co/100x50/f8fafc/1e3a8a?text=Skill+India'">
+        <span>Skill India</span>
+      </div>
+      <div class="trust-logo">
+        <img src="https://placehold.co/100x50/1e3a8a/white?text=TSSC" alt="TSSC">
+        <span>Telecom Sector Skill Council</span>
+      </div>
+      <div class="trust-logo">
+        <img src="https://placehold.co/100x50/047857/white?text=NSQF" alt="NSQF">
+        <span>NSQF Certified</span>
+      </div>
+      <div class="trust-logo">
+        <img src="https://placehold.co/100x50/1e3a8a/white?text=Make+in+India" alt="Make in India">
+        <span>Make in India</span>
+      </div>
+      <div class="trust-logo">
+        <img src="https://placehold.co/100x50/f59e0b/white?text=Digital+India" alt="Digital India">
+        <span>Digital India</span>
+      </div>
+    </div>
   </div>
+</div>
 
-  <!-- TERI ORIGINAL IMAGE PATHS - SIRF CSS FIX KARA HAI -->
+<!-- Stats Counter -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>5000+</h3>
+        <p>Students Certified</p>
+      </div>
+      <div class="stat-item">
+        <h3>150+</h3>
+        <p>Certified Trainers</p>
+      </div>
+      <div class="stat-item">
+        <h3>50+</h3>
+        <p>Training Centers</p>
+      </div>
+      <div class="stat-item">
+        <h3>100%</h3>
+        <p>Govt. Approved</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <!-- 6 CERTIFICATE BOXES -->
   <section id="certificates" class="certificates-section">
     <h2 class="section-title">📜 Government Approved Skill India Certificates</h2>
     <p style="margin-bottom: 20px; color: #475569;">Official TSSC certificates as per National Skill Qualification Framework (NSQF)</p>
     
     <div class="certificates-grid">
-      
       <!-- BOX 1: Academia Membership -->
       <div class="cert-box">
         <div class="cert-image-area">
-          <img src="Screenshot 2026-05-13 213746.png" alt="Academia Membership Certificate">
+          <img src="Screenshot 2026-05-13 213746.png" alt="Academia Membership Certificate" onerror="this.src='https://placehold.co/600x400/f8fafc/94a3b8?text=Academia+Certificate'">
         </div>
         <div class="box-content">
           <div class="cert-name">🎓 Academia Membership Certificate</div>
@@ -467,7 +647,7 @@
       <!-- BOX 2: ToT Certificate -->
       <div class="cert-box">
         <div class="cert-image-area">
-          <img src="Screenshot 2026-05-13 213827.png" alt="ToT Certificate">
+          <img src="Screenshot 2026-05-13 213827.png" alt="ToT Certificate" onerror="this.src='https://placehold.co/600x400/f8fafc/94a3b8?text=ToT+Certificate'">
         </div>
         <div class="box-content">
           <div class="cert-name">🏅 ToT Certificate (Train the Trainer)</div>
@@ -482,7 +662,7 @@
       <!-- BOX 3: TC Accreditation -->
       <div class="cert-box">
         <div class="cert-image-area">
-          <img src="Screenshot 2026-05-13 213852.png" alt="TC Accreditation Certificate">
+          <img src="Screenshot 2026-05-13 213852.png" alt="TC Accreditation Certificate" onerror="this.src='https://placehold.co/600x400/f8fafc/94a3b8?text=TC+Accreditation'">
         </div>
         <div class="box-content">
           <div class="cert-name">🏢 Training Center Accreditation</div>
@@ -497,7 +677,7 @@
       <!-- BOX 4: Mobile Repairing RPL -->
       <div class="cert-box">
         <div class="cert-image-area">
-          <img src="images/mobile-repairing.jpg" alt="Mobile Repairing RPL Certificate">
+          <img src="images/mobile-repairing.jpg" alt="Mobile Repairing RPL Certificate" onerror="this.src='https://placehold.co/600x400/f8fafc/94a3b8?text=Mobile+Repairing'">
         </div>
         <div class="box-content">
           <div class="cert-name">📱 Mobile Repairing Certificate (RPL)</div>
@@ -512,7 +692,7 @@
       <!-- BOX 5: Candidate Certification -->
       <div class="cert-box">
         <div class="cert-image-area">
-          <img src="3. Candidates' Certificate (1).png" alt="Candidate Certificate">
+          <img src="3. Candidates' Certificate (1).png" alt="Candidate Certificate" onerror="this.src='https://placehold.co/600x400/f8fafc/94a3b8?text=Candidate+Certificate'">
         </div>
         <div class="box-content">
           <div class="cert-name">📄 Candidate Certification</div>
@@ -527,7 +707,7 @@
       <!-- BOX 6: Master Trainer -->
       <div class="cert-box">
         <div class="cert-image-area">
-          <img src="images/master-trainer.jpg" alt="Master Trainer Certificate">
+          <img src="images/master-trainer.jpg" alt="Master Trainer Certificate" onerror="this.src='https://placehold.co/600x400/f8fafc/94a3b8?text=Master+Trainer'">
         </div>
         <div class="box-content">
           <div class="cert-name">🎖️ Master Trainer Certificate</div>
@@ -541,15 +721,39 @@
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">💬 What Our Partners Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>Samriddh Skill India helped us get TSSC accreditation within 30 days. Professional team and complete govt. approval process.</p>
+          <div class="testimonial-author">— Rajesh Kumar, Director, Tech Academy</div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>Got my Master Trainer certificate through them. Genuine government certification, no hassle, fully transparent process.</p>
+          <div class="testimonial-author">— Priya Sharma, Master Trainer</div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>Best platform for Skill India certifications. They guided us through the entire affiliation process smoothly.</p>
+          <div class="testimonial-author">— Anil Mehta, Training Center Owner</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="services">
     <h2 class="section-title">📌 Services We Offer</h2>
     <div class="services-grid">
-      <div class="service-item"><h3>🎓 Academia/Industry Membership</h3><div class="fee">₹70k - ₹1L +GST</div></div>
-      <div class="service-item"><h3>🏢 Training Center Accreditation</h3><div class="fee">₹6,000 per role</div></div>
-      <div class="service-item"><h3>📄 Candidate Certification</h3><div class="fee">₹1,500 - ₹2,000</div></div>
-      <div class="service-item"><h3>👨‍🏫 Training of Trainers (ToT)</h3><div class="fee">₹15,000</div></div>
-      <div class="service-item"><h3>⭐ Master Trainers</h3><div class="fee">₹25,000</div></div>
-      <div class="service-item"><h3>📱 Mobile Repairing (RPL)</h3><div class="fee">Call for pricing</div></div>
+      <div class="service-item"><i class="fas fa-graduation-cap"></i><h3>🎓 Academia/Industry Membership</h3><div class="fee">₹70k - ₹1L +GST</div></div>
+      <div class="service-item"><i class="fas fa-building"></i><h3>🏢 Training Center Accreditation</h3><div class="fee">₹6,000 per role</div></div>
+      <div class="service-item"><i class="fas fa-id-card"></i><h3>📄 Candidate Certification</h3><div class="fee">₹1,500 - ₹2,000</div></div>
+      <div class="service-item"><i class="fas fa-chalkboard-user"></i><h3>👨‍🏫 Training of Trainers (ToT)</h3><div class="fee">₹15,000</div></div>
+      <div class="service-item"><i class="fas fa-star"></i><h3>⭐ Master Trainers</h3><div class="fee">₹25,000</div></div>
+      <div class="service-item"><i class="fas fa-mobile-alt"></i><h3>📱 Mobile Repairing (RPL)</h3><div class="fee">Call for pricing</div></div>
     </div>
   </section>
 
@@ -574,11 +778,11 @@
   <section id="process">
     <h2 class="section-title">📋 Process for Affiliation</h2>
     <div class="process-grid">
-      <div class="process-step">🔍 Due Diligence</div>
-      <div class="process-step">💸 Fee Payment</div>
-      <div class="process-step">🤝 Sign MoU</div>
-      <div class="process-step">🏢 Center Verification</div>
-      <div class="process-step">📋 Assessment → Certification</div>
+      <div class="process-step"><i class="fas fa-search"></i><h3>🔍 Due Diligence</h3><p>Document verification & eligibility check</p></div>
+      <div class="process-step"><i class="fas fa-rupee-sign"></i><h3>💸 Fee Payment</h3><p>Payment as per chosen service</p></div>
+      <div class="process-step"><i class="fas fa-file-signature"></i><h3>🤝 Sign MoU</h3><p>Memorandum of Understanding</p></div>
+      <div class="process-step"><i class="fas fa-check-circle"></i><h3>🏢 Center Verification</h3><p>Physical/Digital verification</p></div>
+      <div class="process-step"><i class="fas fa-certificate"></i><h3>📋 Assessment → Certification</h3><p>Final approval & certificate issuance</p></div>
     </div>
   </section>
 
@@ -618,8 +822,15 @@
 </main>
 
 <footer>
-  <p>© 2026 — Samriddh Skill India — Authorized Channel Partner for TSSC — Govt. of India Initiative</p>
-  <p>📍 TSSC registered office: 3rd Floor, Plot No.126, Sector 44, Gurgaon-122003</p>
+  <div class="container">
+    <div class="footer-logos">
+      <img src="https://placehold.co/100x40/1e3a8a/white?text=TSSC" alt="TSSC">
+      <img src="https://placehold.co/100x40/047857/white?text=NSQF" alt="NSQF">
+      <img src="https://placehold.co/100x40/f59e0b/white?text=Skill+India" alt="Skill India">
+    </div>
+    <p>© 2026 — Samriddh Skill India — Authorized Channel Partner for TSSC — Govt. of India Initiative</p>
+    <p>📍 TSSC registered office: 3rd Floor, Plot No.126, Sector 44, Gurgaon-122003</p>
+  </div>
 </footer>
 
 <script>
