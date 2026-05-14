@@ -122,7 +122,7 @@
       }
     }
 
-    /* ✅ HERO SECTION - IMPROVED FOR PC */
+    /* Hero Section */
     .hero {
       background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
       padding: 80px 0;
@@ -138,7 +138,6 @@
       gap: 50px;
     }
 
-    /* Left Side - 40% Image */
     .hero-image {
       flex: 0 0 40%;
       max-width: 40%;
@@ -152,7 +151,6 @@
       display: block;
     }
 
-    /* Right Side - 60% Text */
     .hero-content {
       flex: 0 0 calc(60% - 50px);
       max-width: calc(60% - 50px);
@@ -168,7 +166,6 @@
       font-weight: 700;
       color: #fbbf24;
       margin-bottom: 25px;
-      letter-spacing: 0.5px;
     }
 
     .hero-content h1 {
@@ -184,7 +181,6 @@
       font-size: 1.05rem;
       margin-bottom: 35px;
       line-height: 1.6;
-      max-width: 90%;
     }
 
     .btn-primary {
@@ -197,13 +193,11 @@
       display: inline-block;
       margin-right: 15px;
       transition: all 0.3s;
-      font-size: 0.95rem;
     }
 
     .btn-primary:hover {
       background: #fbbf24;
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(245,158,11,0.3);
     }
 
     .btn-secondary {
@@ -217,7 +211,6 @@
       text-decoration: none;
       display: inline-block;
       transition: all 0.3s;
-      font-size: 0.95rem;
     }
 
     .btn-secondary:hover {
@@ -225,68 +218,28 @@
       transform: translateY(-3px);
     }
 
-    /* Mobile Responsive */
     @media (max-width: 992px) {
-      .hero {
-        padding: 60px 0;
-      }
-      .hero-split {
-        gap: 40px;
-      }
-      .hero-content h1 {
-        font-size: 2rem;
-      }
-      .hero-content p {
-        max-width: 100%;
-      }
+      .hero { padding: 60px 0; }
+      .hero-content h1 { font-size: 2rem; }
     }
 
     @media (max-width: 768px) {
-      .hero {
-        padding: 50px 0;
-        min-height: auto;
-      }
-      .hero-split {
-        flex-direction: column;
-        gap: 30px;
-      }
-      .hero-image {
-        flex: 0 0 100%;
-        max-width: 80%;
-        margin: 0 auto;
-      }
-      .hero-content {
-        flex: 0 0 100%;
-        max-width: 100%;
-        text-align: center;
-      }
-      .hero-content h1 {
-        font-size: 1.6rem;
-      }
-      .hero-content p {
-        font-size: 0.95rem;
-      }
-      .hero-badge {
-        font-size: 0.7rem;
-        padding: 6px 14px;
-      }
+      .hero { padding: 50px 0; min-height: auto; }
+      .hero-split { flex-direction: column; gap: 30px; }
+      .hero-image { flex: 0 0 100%; max-width: 80%; margin: 0 auto; }
+      .hero-content { flex: 0 0 100%; max-width: 100%; text-align: center; }
+      .hero-content h1 { font-size: 1.6rem; }
+      .hero-content p { font-size: 0.95rem; }
+      .hero-badge { font-size: 0.7rem; padding: 6px 14px; }
     }
 
     @media (max-width: 480px) {
-      .hero-image {
-        max-width: 95%;
-      }
-      .hero-content h1 {
-        font-size: 1.3rem;
-      }
-      .btn-primary, .btn-secondary {
-        padding: 10px 20px;
-        font-size: 0.85rem;
-        margin-right: 8px;
-      }
+      .hero-image { max-width: 95%; }
+      .hero-content h1 { font-size: 1.3rem; }
+      .btn-primary, .btn-secondary { padding: 10px 20px; font-size: 0.85rem; margin-right: 8px; }
     }
 
-    /* ✅ STATS SECTION - IMPROVED FOR PC */
+    /* ✅ STATS SECTION - FIXED */
     .stats-section {
       background: linear-gradient(135deg, #fef3c7, #fde68a);
       padding: 50px 0;
@@ -299,11 +252,6 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 30px;
       text-align: center;
-    }
-
-    .stat-item {
-      text-align: center;
-      padding: 10px;
     }
 
     .stat-item h3 {
@@ -320,89 +268,52 @@
     }
 
     @media (max-width: 768px) {
-      .stats-section {
-        padding: 35px 0;
-        margin: 35px 0;
-        border-radius: 20px;
-      }
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
-      .stat-item h3 {
-        font-size: 1.8rem;
-      }
-      .stat-item p {
-        font-size: 0.85rem;
-      }
+      .stats-section { padding: 35px 0; margin: 35px 0; border-radius: 20px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .stat-item h3 { font-size: 1.8rem; }
     }
 
     @media (max-width: 480px) {
-      .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-      .stat-item h3 {
-        font-size: 1.6rem;
-      }
+      .stats-grid { grid-template-columns: 1fr; gap: 15px; }
+      .stat-item h3 { font-size: 1.6rem; }
     }
 
-    /* Floating Button */
-    .floating-btn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: linear-gradient(135deg, #f59e0b, #d97706);
-      color: white;
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-weight: 800;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
-      z-index: 1000;
-      transition: all 0.3s;
-      font-size: 0.95rem;
-    }
-
-    .floating-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.6);
-    }
-
-    @media (max-width: 768px) {
-      .floating-btn {
-        padding: 10px 20px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 0.8rem;
-      }
-    }
-
-    /* Certificates Section */
-    .certificates-section {
-      margin: 60px 0;
-    }
-
+    /* ✅ SECTION TITLE - FIXED YELLOW LINE (NO BLANK SPACE) */
     .section-title {
       font-size: 1.8rem;
       font-weight: 700;
       margin-bottom: 20px;
       position: relative;
       display: inline-block;
+      padding-bottom: 12px;
     }
 
     .section-title:after {
       content: '';
       position: absolute;
-      bottom: -10px;
+      bottom: 0;
       left: 0;
-      width: 60%;
+      width: 100%;
       height: 3px;
       background: #f59e0b;
       border-radius: 4px;
+    }
+
+    /* Center aligned for sections that need it */
+    .section-title.center {
+      display: block;
+      text-align: center;
+    }
+    
+    .section-title.center:after {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+    }
+
+    /* Certificates Section */
+    .certificates-section {
+      margin: 60px 0;
     }
 
     .certificates-grid {
@@ -593,23 +504,36 @@
       margin: 30px 0;
     }
 
+    .floating-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 800;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+      z-index: 1000;
+      transition: all 0.3s;
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .floating-btn { padding: 10px 20px; bottom: 20px; right: 20px; font-size: 0.8rem; }
+    }
+
     @media (max-width: 640px) {
-      .certificates-grid {
-        grid-template-columns: 1fr;
-      }
-      .cert-image-area {
-        height: 180px;
-      }
-      .section-title {
-        font-size: 1.4rem;
-      }
-      .pricing-table th, .pricing-table td {
-        padding: 8px 10px;
-        font-size: 0.85rem;
-      }
-      .form-section {
-        padding: 20px;
-      }
+      .certificates-grid { grid-template-columns: 1fr; }
+      .cert-image-area { height: 180px; }
+      .section-title { font-size: 1.4rem; }
     }
   </style>
 </head>
@@ -632,16 +556,13 @@
   </div>
 </div>
 
-<!-- ✅ HERO SECTION - PERFECTLY ALIGNED -->
+<!-- Hero Section -->
 <section class="hero">
   <div class="container">
     <div class="hero-split">
-      <!-- Left Side - 40% Image -->
       <div class="hero-image">
         <img src="Screenshot 2026-05-14 184650.png" alt="Government of India Skill Certificate">
       </div>
-      
-      <!-- Right Side - 60% Text (Properly Aligned Vertically) -->
       <div class="hero-content">
         <div class="hero-badge">✓ Government Approved | Skill India | NSQF Aligned</div>
         <h1>India's Most Trusted Platform for<br>TSSC Government Certifications</h1>
@@ -655,25 +576,13 @@
   </div>
 </section>
 
-<!-- ✅ STATS SECTION - PERFECTLY ALIGNED -->
+<!-- Stats Section -->
 <section class="stats-section container">
   <div class="stats-grid">
-    <div class="stat-item">
-      <h3>5000+</h3>
-      <p>Students Certified</p>
-    </div>
-    <div class="stat-item">
-      <h3>150+</h3>
-      <p>Certified Trainers</p>
-    </div>
-    <div class="stat-item">
-      <h3>50+</h3>
-      <p>Training Centers</p>
-    </div>
-    <div class="stat-item">
-      <h3>100%</h3>
-      <p>Govt. Approved</p>
-    </div>
+    <div class="stat-item"><h3>5000+</h3><p>Students Certified</p></div>
+    <div class="stat-item"><h3>150+</h3><p>Certified Trainers</p></div>
+    <div class="stat-item"><h3>50+</h3><p>Training Centers</p></div>
+    <div class="stat-item"><h3>100%</h3><p>Govt. Approved</p></div>
   </div>
 </section>
 
@@ -780,12 +689,16 @@
     <h2 class="section-title">💰 Fee Structure</h2>
     <div class="pricing-table">
       <table>
-        <tr><th>Service</th><th>Fee (INR + GST)</th></tr>
-        <tr><td>Membership Partner Fee</td><td>₹70,000 - ₹1,00,000</td></tr>
-        <tr><td>Training Center Accreditation</td><td>₹6,000 per center/role</td></tr>
-        <tr><td>Candidate Certification</td><td>₹1,500 / ₹2,000</td></tr>
-        <tr><td>Training of Trainers (ToT)</td><td>₹15,000</td></tr>
-        <tr><td>Master Trainers</td><td>₹25,000</td></tr>
+        <thead>
+          <tr><th>Service</th><th>Fee (INR + GST)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Membership Partner Fee</td><td>₹70,000 - ₹1,00,000</td></tr>
+          <tr><td>Training Center Accreditation</td><td>₹6,000 per center/role</td></tr>
+          <tr><td>Candidate Certification</td><td>₹1,500 / ₹2,000</td></tr>
+          <tr><td>Training of Trainers (ToT)</td><td>₹15,000</td></tr>
+          <tr><td>Master Trainers</td><td>₹25,000</td></tr>
+        </tbody>
       </table>
     </div>
   </section>
