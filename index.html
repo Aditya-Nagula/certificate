@@ -122,17 +122,20 @@
       }
     }
 
-    /* ✅ HERO SECTION - 40% IMAGE | 60% TEXT */
+    /* ✅ HERO SECTION - IMPROVED FOR PC */
     .hero {
       background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-      padding: 60px 0;
+      padding: 80px 0;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
     }
 
     .hero-split {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 30px;
+      gap: 50px;
     }
 
     /* Left Side - 40% Image */
@@ -145,110 +148,202 @@
       width: 100%;
       height: auto;
       border-radius: 20px;
-      box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+      box-shadow: 0 25px 40px rgba(0,0,0,0.25);
+      display: block;
     }
 
     /* Right Side - 60% Text */
     .hero-content {
-      flex: 0 0 calc(60% - 30px);
-      max-width: calc(60% - 30px);
+      flex: 0 0 calc(60% - 50px);
+      max-width: calc(60% - 50px);
     }
 
     .hero-badge {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.12);
       backdrop-filter: blur(10px);
       display: inline-block;
-      padding: 6px 14px;
+      padding: 8px 18px;
       border-radius: 40px;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: 700;
       color: #fbbf24;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
     }
 
     .hero-content h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       font-weight: 800;
-      line-height: 1.3;
+      line-height: 1.2;
       color: white;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .hero-content p {
       color: #cbd5e1;
-      font-size: 1rem;
-      margin-bottom: 25px;
+      font-size: 1.05rem;
+      margin-bottom: 35px;
+      line-height: 1.6;
+      max-width: 90%;
     }
 
     .btn-primary {
       background: #f59e0b;
       color: #0f172a;
-      padding: 12px 28px;
-      border-radius: 40px;
+      padding: 14px 32px;
+      border-radius: 50px;
       font-weight: 700;
       text-decoration: none;
       display: inline-block;
-      margin-right: 12px;
+      margin-right: 15px;
       transition: all 0.3s;
+      font-size: 0.95rem;
     }
 
     .btn-primary:hover {
       background: #fbbf24;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(245,158,11,0.3);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.1);
       backdrop-filter: blur(10px);
-      border: 1px solid #f59e0b;
-      padding: 12px 28px;
-      border-radius: 40px;
+      border: 1.5px solid #f59e0b;
+      padding: 14px 32px;
+      border-radius: 50px;
       font-weight: 600;
       color: white;
       text-decoration: none;
       display: inline-block;
       transition: all 0.3s;
+      font-size: 0.95rem;
     }
 
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-3px);
     }
 
     /* Mobile Responsive */
+    @media (max-width: 992px) {
+      .hero {
+        padding: 60px 0;
+      }
+      .hero-split {
+        gap: 40px;
+      }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content p {
+        max-width: 100%;
+      }
+    }
+
     @media (max-width: 768px) {
+      .hero {
+        padding: 50px 0;
+        min-height: auto;
+      }
       .hero-split {
         flex-direction: column;
+        gap: 30px;
       }
       .hero-image {
         flex: 0 0 100%;
-        max-width: 100%;
-        order: 1;
+        max-width: 80%;
+        margin: 0 auto;
       }
       .hero-content {
         flex: 0 0 100%;
         max-width: 100%;
         text-align: center;
-        order: 2;
       }
       .hero-content h1 {
         font-size: 1.6rem;
       }
+      .hero-content p {
+        font-size: 0.95rem;
+      }
       .hero-badge {
         font-size: 0.7rem;
+        padding: 6px 14px;
       }
     }
 
     @media (max-width: 480px) {
-      .hero {
-        padding: 40px 0;
+      .hero-image {
+        max-width: 95%;
       }
       .hero-content h1 {
         font-size: 1.3rem;
       }
       .btn-primary, .btn-secondary {
-        padding: 8px 18px;
-        font-size: 0.8rem;
-        margin-bottom: 10px;
+        padding: 10px 20px;
+        font-size: 0.85rem;
+        margin-right: 8px;
+      }
+    }
+
+    /* ✅ STATS SECTION - IMPROVED FOR PC */
+    .stats-section {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      padding: 50px 0;
+      border-radius: 28px;
+      margin: 50px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .stat-item h3 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #1e3a8a;
+      margin-bottom: 8px;
+    }
+
+    .stat-item p {
+      color: #475569;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .stats-section {
+        padding: 35px 0;
+        margin: 35px 0;
+        border-radius: 20px;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .stat-item h3 {
+        font-size: 1.8rem;
+      }
+      .stat-item p {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      .stat-item h3 {
+        font-size: 1.6rem;
       }
     }
 
@@ -259,7 +354,7 @@
       right: 30px;
       background: linear-gradient(135deg, #f59e0b, #d97706);
       color: white;
-      padding: 14px 24px;
+      padding: 14px 28px;
       border-radius: 50px;
       font-weight: 800;
       text-decoration: none;
@@ -269,45 +364,21 @@
       box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
       z-index: 1000;
       transition: all 0.3s;
+      font-size: 0.95rem;
     }
 
     .floating-btn:hover {
       transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.6);
     }
 
     @media (max-width: 768px) {
       .floating-btn {
-        padding: 10px 18px;
+        padding: 10px 20px;
         bottom: 20px;
         right: 20px;
         font-size: 0.8rem;
       }
-    }
-
-    /* Stats Section */
-    .stats-section {
-      background: linear-gradient(135deg, #fef3c7, #fde68a);
-      padding: 40px 0;
-      border-radius: 24px;
-      margin: 40px 0;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      text-align: center;
-    }
-
-    .stat-item h3 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: #1e3a8a;
-    }
-
-    .stat-item p {
-      color: #475569;
-      font-weight: 600;
     }
 
     /* Certificates Section */
@@ -336,7 +407,7 @@
 
     .certificates-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 25px;
       margin-top: 40px;
     }
@@ -426,7 +497,7 @@
 
     .services-grid, .process-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       margin: 30px 0;
     }
@@ -470,7 +541,7 @@
     }
 
     .pricing-table th, .pricing-table td {
-      padding: 10px;
+      padding: 12px 15px;
       border-bottom: 1px solid #cbd5e1;
       text-align: left;
     }
@@ -478,14 +549,14 @@
     .form-section {
       background: white;
       border-radius: 24px;
-      padding: 28px;
+      padding: 32px;
       margin: 40px 0;
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     }
 
     input, select {
       width: 100%;
-      padding: 12px;
+      padding: 12px 16px;
       border-radius: 12px;
       border: 1px solid #cbd5e1;
       margin-bottom: 15px;
@@ -496,10 +567,11 @@
       background: #1e3a8a;
       color: white;
       border: none;
-      padding: 12px 28px;
+      padding: 12px 32px;
       border-radius: 40px;
       font-weight: 700;
       cursor: pointer;
+      transition: all 0.3s;
     }
 
     button[type="submit"]:hover {
@@ -516,7 +588,7 @@
 
     .company-address {
       background: #e6f0ff;
-      padding: 20px;
+      padding: 24px;
       border-radius: 20px;
       margin: 30px 0;
     }
@@ -530,6 +602,13 @@
       }
       .section-title {
         font-size: 1.4rem;
+      }
+      .pricing-table th, .pricing-table td {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+      }
+      .form-section {
+        padding: 20px;
       }
     }
   </style>
@@ -553,7 +632,7 @@
   </div>
 </div>
 
-<!-- ✅ HERO SECTION - 40% IMAGE | 60% TEXT -->
+<!-- ✅ HERO SECTION - PERFECTLY ALIGNED -->
 <section class="hero">
   <div class="container">
     <div class="hero-split">
@@ -562,7 +641,7 @@
         <img src="Screenshot 2026-05-14 184650.png" alt="Government of India Skill Certificate">
       </div>
       
-      <!-- Right Side - 60% Text + Buttons -->
+      <!-- Right Side - 60% Text (Properly Aligned Vertically) -->
       <div class="hero-content">
         <div class="hero-badge">✓ Government Approved | Skill India | NSQF Aligned</div>
         <h1>India's Most Trusted Platform for<br>TSSC Government Certifications</h1>
@@ -576,13 +655,25 @@
   </div>
 </section>
 
-<!-- Stats Section -->
+<!-- ✅ STATS SECTION - PERFECTLY ALIGNED -->
 <section class="stats-section container">
   <div class="stats-grid">
-    <div class="stat-item"><h3>5000+</h3><p>Students Certified</p></div>
-    <div class="stat-item"><h3>150+</h3><p>Certified Trainers</p></div>
-    <div class="stat-item"><h3>50+</h3><p>Training Centers</p></div>
-    <div class="stat-item"><h3>100%</h3><p>Govt. Approved</p></div>
+    <div class="stat-item">
+      <h3>5000+</h3>
+      <p>Students Certified</p>
+    </div>
+    <div class="stat-item">
+      <h3>150+</h3>
+      <p>Certified Trainers</p>
+    </div>
+    <div class="stat-item">
+      <h3>50+</h3>
+      <p>Training Centers</p>
+    </div>
+    <div class="stat-item">
+      <h3>100%</h3>
+      <p>Govt. Approved</p>
+    </div>
   </div>
 </section>
 
